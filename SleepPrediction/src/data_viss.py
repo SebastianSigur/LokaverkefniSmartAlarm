@@ -1,10 +1,6 @@
-import pandas as pd
 import matplotlib.pyplot as plt
-from src.model import getData, defineModel, trainModel, SleepStage
+from src.model import getData, SleepStage
 import numpy as np
-from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import confusion_matrix
-from sklearn.metrics import cohen_kappa_score
 
 import matplotlib.pyplot as plt
 
