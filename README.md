@@ -26,9 +26,9 @@ The `Xcode Project` directory contains the source code for the iOS and watchOS a
 
 Here is how the applications look:
 
-iOS Application: ![iOS App](link_to_ios_app_image)
+iOS Application: ![Alt text](assets/images/ios.png?raw=true "iOS Application")
 
-watchOS Application: ![watchOS App](link_to_watchos_app_image)
+watchOS Application: ![Alt text](assets/images/watch.png?raw=true "WatchOS Application")
 
 ## API
 The `API` directory contains the code for the application programming interface (API) that handles the communication between the Apple Watch and the server. The Apple Watch records the user's heart rate and sends it to the API. The API then communicates with the sleep prediction model to analyze the data and determine the optimal time within the user's wake-up window to trigger the alarm.
