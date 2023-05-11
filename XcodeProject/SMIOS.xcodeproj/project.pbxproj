@@ -1,0 +1,798 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DC3354AB29E044B90012E671 /* SleepStages+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3354A929E044B90012E671 /* SleepStages+CoreDataClass.swift */; };
+		DC3354AD29E1B1D60012E671 /* SleepStages+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3354AA29E044B90012E671 /* SleepStages+CoreDataProperties.swift */; };
+		DC70A45E29CD1B3800A88429 /* SMIOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70A45D29CD1B3800A88429 /* SMIOSApp.swift */; };
+		DC70A46229CD1B3A00A88429 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC70A46129CD1B3A00A88429 /* Assets.xcassets */; };
+		DC70A46529CD1B3A00A88429 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC70A46429CD1B3A00A88429 /* Preview Assets.xcassets */; };
+		DC70A46729CD1B3A00A88429 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70A46629CD1B3A00A88429 /* Persistence.swift */; };
+		DC70A46A29CD1B3A00A88429 /* SMIOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DC70A46829CD1B3A00A88429 /* SMIOS.xcdatamodeld */; };
+		DC70A47829CD1B5F00A88429 /* SMWatchAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70A47729CD1B5F00A88429 /* SMWatchAppApp.swift */; };
+		DC70A47A29CD1B5F00A88429 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70A47929CD1B5F00A88429 /* ContentView.swift */; };
+		DC70A47C29CD1B6100A88429 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC70A47B29CD1B6100A88429 /* Assets.xcassets */; };
+		DC70A47F29CD1B6100A88429 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC70A47E29CD1B6100A88429 /* Preview Assets.xcassets */; };
+		DC70A48D29CD1B9900A88429 /* SleepTips.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70A48429CD1B9900A88429 /* SleepTips.swift */; };
+		DC70A48E29CD1B9900A88429 /* LastHeartRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70A48529CD1B9900A88429 /* LastHeartRate.swift */; };
+		DC70A48F29CD1B9900A88429 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70A48629CD1B9900A88429 /* StatsView.swift */; };
+		DC70A49029CD1B9900A88429 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70A48729CD1B9900A88429 /* ContentView.swift */; };
+		DC70A49129CD1B9900A88429 /* AllSleepHeartViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70A48829CD1B9900A88429 /* AllSleepHeartViews.swift */; };
+		DC70A49229CD1B9900A88429 /* AddAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70A48929CD1B9900A88429 /* AddAlarmView.swift */; };
+		DC70A49329CD1B9900A88429 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70A48A29CD1B9900A88429 /* ProfileView.swift */; };
+		DC70A49429CD1B9900A88429 /* AlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70A48B29CD1B9900A88429 /* AlarmView.swift */; };
+		DC70A49529CD1B9900A88429 /* heartRateChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70A48C29CD1B9900A88429 /* heartRateChartView.swift */; };
+		DC70A49729CD1D0C00A88429 /* ringtone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DC70A49629CD1D0C00A88429 /* ringtone.mp3 */; };
+		DC70A49A29CD1D1B00A88429 /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70A49829CD1D1B00A88429 /* WorkoutManager.swift */; };
+		DC70A49B29CD1D1B00A88429 /* SleepProcessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70A49929CD1D1B00A88429 /* SleepProcessView.swift */; };
+		DC70A49E29CD1D2300A88429 /* HeartRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70A49C29CD1D2300A88429 /* HeartRateView.swift */; };
+		DC70A4A129CD1D6600A88429 /* AlarmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70A4A029CD1D6600A88429 /* AlarmManager.swift */; };
+		DC70A4A229CD1D6900A88429 /* AlarmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70A4A029CD1D6600A88429 /* AlarmManager.swift */; };
+		DC70A4A329CD1D6B00A88429 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70A46629CD1B3A00A88429 /* Persistence.swift */; };
+		DC70A4A629CD1D9000A88429 /* Alarm+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70A4A429CD1D9000A88429 /* Alarm+CoreDataClass.swift */; };
+		DC70A4A729CD1D9000A88429 /* Alarm+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70A4A429CD1D9000A88429 /* Alarm+CoreDataClass.swift */; };
+		DC70A4A829CD1D9000A88429 /* Alarm+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70A4A529CD1D9000A88429 /* Alarm+CoreDataProperties.swift */; };
+		DC70A4A929CD1D9000A88429 /* Alarm+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70A4A529CD1D9000A88429 /* Alarm+CoreDataProperties.swift */; };
+		DC70A4AC29CD1DA300A88429 /* NewSleep+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70A4AA29CD1DA300A88429 /* NewSleep+CoreDataClass.swift */; };
+		DC70A4AD29CD1DA300A88429 /* NewSleep+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70A4AA29CD1DA300A88429 /* NewSleep+CoreDataClass.swift */; };
+		DC70A4AE29CD1DA300A88429 /* NewSleep+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70A4AB29CD1DA300A88429 /* NewSleep+CoreDataProperties.swift */; };
+		DC70A4AF29CD1DA300A88429 /* NewSleep+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70A4AB29CD1DA300A88429 /* NewSleep+CoreDataProperties.swift */; };
+		DC70A4B229CD1DB700A88429 /* SleepConfigurations+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70A4B029CD1DB700A88429 /* SleepConfigurations+CoreDataClass.swift */; };
+		DC70A4B329CD1DB700A88429 /* SleepConfigurations+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70A4B029CD1DB700A88429 /* SleepConfigurations+CoreDataClass.swift */; };
+		DC70A4B429CD1DB700A88429 /* SleepConfigurations+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70A4B129CD1DB700A88429 /* SleepConfigurations+CoreDataProperties.swift */; };
+		DC70A4B529CD1DB700A88429 /* SleepConfigurations+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70A4B129CD1DB700A88429 /* SleepConfigurations+CoreDataProperties.swift */; };
+		DC70A4B829CD1DF000A88429 /* LineChartView in Frameworks */ = {isa = PBXBuildFile; productRef = DC70A4B729CD1DF000A88429 /* LineChartView */; };
+		DC70A4BD29CD202000A88429 /* AlarmsViewMini.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70A4BC29CD202000A88429 /* AlarmsViewMini.swift */; };
+		DC70A4BE29CD202000A88429 /* AlarmsViewMini.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC70A4BC29CD202000A88429 /* AlarmsViewMini.swift */; };
+		DC70A4BF29CD211600A88429 /* SMIOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DC70A46829CD1B3A00A88429 /* SMIOS.xcdatamodeld */; };
+		DC97013C29F943E500061D3E /* SMWatchApp Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = DC70A47529CD1B5F00A88429 /* SMWatchApp Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DCA9596629DDBFB900944DF9 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA9596429DDBFB900944DF9 /* User+CoreDataClass.swift */; };
+		DCA9596729DDBFB900944DF9 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA9596429DDBFB900944DF9 /* User+CoreDataClass.swift */; };
+		DCA9596829DDBFB900944DF9 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA9596529DDBFB900944DF9 /* User+CoreDataProperties.swift */; };
+		DCA9596929DDBFB900944DF9 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA9596529DDBFB900944DF9 /* User+CoreDataProperties.swift */; };
+		DCB23EAC29FAAAEF00060564 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB23EAB29FAAAEF00060564 /* TutorialView.swift */; };
+		DCB23EB229FAB7F900060564 /* Alarms.PNG in Resources */ = {isa = PBXBuildFile; fileRef = DCB23EAE29FAB7F900060564 /* Alarms.PNG */; };
+		DCB23EB329FAB7F900060564 /* Clock.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DCB23EAF29FAB7F900060564 /* Clock.jpg */; };
+		DCB23EB429FAB7F900060564 /* AddClock.PNG in Resources */ = {isa = PBXBuildFile; fileRef = DCB23EB029FAB7F900060564 /* AddClock.PNG */; };
+		DCB23EB529FAB7F900060564 /* Profile.PNG in Resources */ = {isa = PBXBuildFile; fileRef = DCB23EB129FAB7F900060564 /* Profile.PNG */; };
+		DCB23EB729FAB85E00060564 /* Tabs.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DCB23EB629FAB85E00060564 /* Tabs.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DC97013D29F943E500061D3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC70A45229CD1B3800A88429 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC70A47429CD1B5F00A88429;
+			remoteInfo = "SMWatchApp Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DC97013F29F943E500061D3E /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				DC97013C29F943E500061D3E /* SMWatchApp Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		DC3354A929E044B90012E671 /* SleepStages+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SleepStages+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DC3354AA29E044B90012E671 /* SleepStages+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SleepStages+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DC58E92A29CFE1BA00F0479B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC70A45A29CD1B3800A88429 /* SMIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC70A45D29CD1B3800A88429 /* SMIOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMIOSApp.swift; sourceTree = "<group>"; };
+		DC70A46129CD1B3A00A88429 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DC70A46429CD1B3A00A88429 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DC70A46629CD1B3A00A88429 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		DC70A46929CD1B3A00A88429 /* SMIOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SMIOS.xcdatamodel; sourceTree = "<group>"; };
+		DC70A47529CD1B5F00A88429 /* SMWatchApp Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SMWatchApp Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC70A47729CD1B5F00A88429 /* SMWatchAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMWatchAppApp.swift; sourceTree = "<group>"; };
+		DC70A47929CD1B5F00A88429 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DC70A47B29CD1B6100A88429 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DC70A47E29CD1B6100A88429 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DC70A48429CD1B9900A88429 /* SleepTips.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleepTips.swift; sourceTree = "<group>"; };
+		DC70A48529CD1B9900A88429 /* LastHeartRate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastHeartRate.swift; sourceTree = "<group>"; };
+		DC70A48629CD1B9900A88429 /* StatsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		DC70A48729CD1B9900A88429 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DC70A48829CD1B9900A88429 /* AllSleepHeartViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllSleepHeartViews.swift; sourceTree = "<group>"; };
+		DC70A48929CD1B9900A88429 /* AddAlarmView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAlarmView.swift; sourceTree = "<group>"; };
+		DC70A48A29CD1B9900A88429 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		DC70A48B29CD1B9900A88429 /* AlarmView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmView.swift; sourceTree = "<group>"; };
+		DC70A48C29CD1B9900A88429 /* heartRateChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = heartRateChartView.swift; sourceTree = "<group>"; };
+		DC70A49629CD1D0C00A88429 /* ringtone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ringtone.mp3; sourceTree = "<group>"; };
+		DC70A49829CD1D1B00A88429 /* WorkoutManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
+		DC70A49929CD1D1B00A88429 /* SleepProcessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleepProcessView.swift; sourceTree = "<group>"; };
+		DC70A49C29CD1D2300A88429 /* HeartRateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRateView.swift; sourceTree = "<group>"; };
+		DC70A4A029CD1D6600A88429 /* AlarmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmManager.swift; sourceTree = "<group>"; };
+		DC70A4A429CD1D9000A88429 /* Alarm+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alarm+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DC70A4A529CD1D9000A88429 /* Alarm+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alarm+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DC70A4AA29CD1DA300A88429 /* NewSleep+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewSleep+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DC70A4AB29CD1DA300A88429 /* NewSleep+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewSleep+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DC70A4B029CD1DB700A88429 /* SleepConfigurations+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SleepConfigurations+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DC70A4B129CD1DB700A88429 /* SleepConfigurations+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SleepConfigurations+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DC70A4B929CD1E6200A88429 /* SMIOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SMIOS.entitlements; sourceTree = "<group>"; };
+		DC70A4BA29CD1E7C00A88429 /* SMWatchApp-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SMWatchApp-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		DC70A4BB29CD1E8000A88429 /* SMWatchApp Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SMWatchApp Watch App.entitlements"; sourceTree = "<group>"; };
+		DC70A4BC29CD202000A88429 /* AlarmsViewMini.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmsViewMini.swift; sourceTree = "<group>"; };
+		DC97012F29F8803000061D3E /* SMIOSOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMIOSOSApp.swift; sourceTree = "<group>"; };
+		DC97013129F8803000061D3E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DC97013329F8803200061D3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DC97013629F8803200061D3E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DCA9596429DDBFB900944DF9 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DCA9596529DDBFB900944DF9 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DCAA50732A0157DA006CC56F /* SMWatchApp Watch AppDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SMWatchApp Watch AppDebug.entitlements"; sourceTree = "<group>"; };
+		DCB23EAB29FAAAEF00060564 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
+		DCB23EAE29FAB7F900060564 /* Alarms.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Alarms.PNG; sourceTree = "<group>"; };
+		DCB23EAF29FAB7F900060564 /* Clock.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Clock.jpg; sourceTree = "<group>"; };
+		DCB23EB029FAB7F900060564 /* AddClock.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AddClock.PNG; sourceTree = "<group>"; };
+		DCB23EB129FAB7F900060564 /* Profile.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Profile.PNG; sourceTree = "<group>"; };
+		DCB23EB629FAB85E00060564 /* Tabs.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Tabs.jpg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DC70A45729CD1B3800A88429 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC70A4B829CD1DF000A88429 /* LineChartView in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC70A47229CD1B5F00A88429 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DC70A45129CD1B3800A88429 = {
+			isa = PBXGroup;
+			children = (
+				DC3354A929E044B90012E671 /* SleepStages+CoreDataClass.swift */,
+				DC3354AA29E044B90012E671 /* SleepStages+CoreDataProperties.swift */,
+				DCA9596429DDBFB900944DF9 /* User+CoreDataClass.swift */,
+				DCA9596529DDBFB900944DF9 /* User+CoreDataProperties.swift */,
+				DC58E92A29CFE1BA00F0479B /* Info.plist */,
+				DC70A4B029CD1DB700A88429 /* SleepConfigurations+CoreDataClass.swift */,
+				DC70A4B129CD1DB700A88429 /* SleepConfigurations+CoreDataProperties.swift */,
+				DC70A4AA29CD1DA300A88429 /* NewSleep+CoreDataClass.swift */,
+				DC70A4AB29CD1DA300A88429 /* NewSleep+CoreDataProperties.swift */,
+				DC70A4A429CD1D9000A88429 /* Alarm+CoreDataClass.swift */,
+				DC70A4A529CD1D9000A88429 /* Alarm+CoreDataProperties.swift */,
+				DC70A45C29CD1B3800A88429 /* SMIOS */,
+				DC70A47629CD1B5F00A88429 /* SMWatchApp Watch App */,
+				DC97012E29F8803000061D3E /* SMIOSOS Watch App */,
+				DC70A45B29CD1B3800A88429 /* Products */,
+				DC97013B29F943E500061D3E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DC70A45B29CD1B3800A88429 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC70A45A29CD1B3800A88429 /* SMIOS.app */,
+				DC70A47529CD1B5F00A88429 /* SMWatchApp Watch App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC70A45C29CD1B3800A88429 /* SMIOS */ = {
+			isa = PBXGroup;
+			children = (
+				DCB23EAD29FAB5D500060564 /* Images */,
+				DC70A4B929CD1E6200A88429 /* SMIOS.entitlements */,
+				DC70A49629CD1D0C00A88429 /* ringtone.mp3 */,
+				DC70A48329CD1B8200A88429 /* Views */,
+				DC70A45D29CD1B3800A88429 /* SMIOSApp.swift */,
+				DC70A46129CD1B3A00A88429 /* Assets.xcassets */,
+				DC70A46629CD1B3A00A88429 /* Persistence.swift */,
+				DC70A46829CD1B3A00A88429 /* SMIOS.xcdatamodeld */,
+				DC70A46329CD1B3A00A88429 /* Preview Content */,
+			);
+			path = SMIOS;
+			sourceTree = "<group>";
+		};
+		DC70A46329CD1B3A00A88429 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DC70A46429CD1B3A00A88429 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DC70A47629CD1B5F00A88429 /* SMWatchApp Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				DCAA50732A0157DA006CC56F /* SMWatchApp Watch AppDebug.entitlements */,
+				DC70A4BC29CD202000A88429 /* AlarmsViewMini.swift */,
+				DC70A4BB29CD1E8000A88429 /* SMWatchApp Watch App.entitlements */,
+				DC70A4BA29CD1E7C00A88429 /* SMWatchApp-Watch-App-Info.plist */,
+				DC70A4A029CD1D6600A88429 /* AlarmManager.swift */,
+				DC70A49C29CD1D2300A88429 /* HeartRateView.swift */,
+				DC70A49929CD1D1B00A88429 /* SleepProcessView.swift */,
+				DC70A49829CD1D1B00A88429 /* WorkoutManager.swift */,
+				DC70A47729CD1B5F00A88429 /* SMWatchAppApp.swift */,
+				DC70A47929CD1B5F00A88429 /* ContentView.swift */,
+				DC70A47B29CD1B6100A88429 /* Assets.xcassets */,
+				DC70A47D29CD1B6100A88429 /* Preview Content */,
+			);
+			path = "SMWatchApp Watch App";
+			sourceTree = "<group>";
+		};
+		DC70A47D29CD1B6100A88429 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DC70A47E29CD1B6100A88429 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DC70A48329CD1B8200A88429 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DC70A48929CD1B9900A88429 /* AddAlarmView.swift */,
+				DC70A48B29CD1B9900A88429 /* AlarmView.swift */,
+				DC70A48829CD1B9900A88429 /* AllSleepHeartViews.swift */,
+				DC70A48729CD1B9900A88429 /* ContentView.swift */,
+				DC70A48C29CD1B9900A88429 /* heartRateChartView.swift */,
+				DC70A48529CD1B9900A88429 /* LastHeartRate.swift */,
+				DC70A48A29CD1B9900A88429 /* ProfileView.swift */,
+				DC70A48429CD1B9900A88429 /* SleepTips.swift */,
+				DC70A48629CD1B9900A88429 /* StatsView.swift */,
+				DCB23EAB29FAAAEF00060564 /* TutorialView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DC97012E29F8803000061D3E /* SMIOSOS Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				DC97012F29F8803000061D3E /* SMIOSOSApp.swift */,
+				DC97013129F8803000061D3E /* ContentView.swift */,
+				DC97013329F8803200061D3E /* Assets.xcassets */,
+				DC97013529F8803200061D3E /* Preview Content */,
+			);
+			path = "SMIOSOS Watch App";
+			sourceTree = "<group>";
+		};
+		DC97013529F8803200061D3E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DC97013629F8803200061D3E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DC97013B29F943E500061D3E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DCB23EAD29FAB5D500060564 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				DCB23EB629FAB85E00060564 /* Tabs.jpg */,
+				DCB23EAE29FAB7F900060564 /* Alarms.PNG */,
+				DCB23EB129FAB7F900060564 /* Profile.PNG */,
+				DCB23EAF29FAB7F900060564 /* Clock.jpg */,
+				DCB23EB029FAB7F900060564 /* AddClock.PNG */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DC70A45929CD1B3800A88429 /* SMIOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC70A46E29CD1B3A00A88429 /* Build configuration list for PBXNativeTarget "SMIOS" */;
+			buildPhases = (
+				DC70A45629CD1B3800A88429 /* Sources */,
+				DC70A45729CD1B3800A88429 /* Frameworks */,
+				DC70A45829CD1B3800A88429 /* Resources */,
+				DC97013F29F943E500061D3E /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC97013E29F943E500061D3E /* PBXTargetDependency */,
+			);
+			name = SMIOS;
+			packageProductDependencies = (
+				DC70A4B729CD1DF000A88429 /* LineChartView */,
+			);
+			productName = SMIOS;
+			productReference = DC70A45A29CD1B3800A88429 /* SMIOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DC70A47429CD1B5F00A88429 /* SMWatchApp Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC70A48029CD1B6100A88429 /* Build configuration list for PBXNativeTarget "SMWatchApp Watch App" */;
+			buildPhases = (
+				DC70A47129CD1B5F00A88429 /* Sources */,
+				DC70A47229CD1B5F00A88429 /* Frameworks */,
+				DC70A47329CD1B5F00A88429 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SMWatchApp Watch App";
+			productName = "SMWatchApp Watch App";
+			productReference = DC70A47529CD1B5F00A88429 /* SMWatchApp Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DC70A45229CD1B3800A88429 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					DC70A45929CD1B3800A88429 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					DC70A47429CD1B5F00A88429 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = DC70A45529CD1B3800A88429 /* Build configuration list for PBXProject "SMIOS" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DC70A45129CD1B3800A88429;
+			packageReferences = (
+				DC70A4B629CD1DF000A88429 /* XCRemoteSwiftPackageReference "LineChartView" */,
+			);
+			productRefGroup = DC70A45B29CD1B3800A88429 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DC70A45929CD1B3800A88429 /* SMIOS */,
+				DC70A47429CD1B5F00A88429 /* SMWatchApp Watch App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DC70A45829CD1B3800A88429 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC70A46529CD1B3A00A88429 /* Preview Assets.xcassets in Resources */,
+				DCB23EB329FAB7F900060564 /* Clock.jpg in Resources */,
+				DCB23EB229FAB7F900060564 /* Alarms.PNG in Resources */,
+				DC70A49729CD1D0C00A88429 /* ringtone.mp3 in Resources */,
+				DCB23EB529FAB7F900060564 /* Profile.PNG in Resources */,
+				DCB23EB729FAB85E00060564 /* Tabs.jpg in Resources */,
+				DCB23EB429FAB7F900060564 /* AddClock.PNG in Resources */,
+				DC70A46229CD1B3A00A88429 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC70A47329CD1B5F00A88429 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC70A47F29CD1B6100A88429 /* Preview Assets.xcassets in Resources */,
+				DC70A47C29CD1B6100A88429 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DC70A45629CD1B3800A88429 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC70A4B429CD1DB700A88429 /* SleepConfigurations+CoreDataProperties.swift in Sources */,
+				DC70A4AE29CD1DA300A88429 /* NewSleep+CoreDataProperties.swift in Sources */,
+				DC70A49229CD1B9900A88429 /* AddAlarmView.swift in Sources */,
+				DC70A4A629CD1D9000A88429 /* Alarm+CoreDataClass.swift in Sources */,
+				DC70A46729CD1B3A00A88429 /* Persistence.swift in Sources */,
+				DC3354AB29E044B90012E671 /* SleepStages+CoreDataClass.swift in Sources */,
+				DC70A49529CD1B9900A88429 /* heartRateChartView.swift in Sources */,
+				DC70A4A229CD1D6900A88429 /* AlarmManager.swift in Sources */,
+				DCB23EAC29FAAAEF00060564 /* TutorialView.swift in Sources */,
+				DC70A48D29CD1B9900A88429 /* SleepTips.swift in Sources */,
+				DC70A49029CD1B9900A88429 /* ContentView.swift in Sources */,
+				DC70A46A29CD1B3A00A88429 /* SMIOS.xcdatamodeld in Sources */,
+				DC70A48E29CD1B9900A88429 /* LastHeartRate.swift in Sources */,
+				DC70A4BD29CD202000A88429 /* AlarmsViewMini.swift in Sources */,
+				DC70A49129CD1B9900A88429 /* AllSleepHeartViews.swift in Sources */,
+				DC70A48F29CD1B9900A88429 /* StatsView.swift in Sources */,
+				DC70A4A829CD1D9000A88429 /* Alarm+CoreDataProperties.swift in Sources */,
+				DC70A49329CD1B9900A88429 /* ProfileView.swift in Sources */,
+				DC70A4B229CD1DB700A88429 /* SleepConfigurations+CoreDataClass.swift in Sources */,
+				DC3354AD29E1B1D60012E671 /* SleepStages+CoreDataProperties.swift in Sources */,
+				DC70A49429CD1B9900A88429 /* AlarmView.swift in Sources */,
+				DCA9596829DDBFB900944DF9 /* User+CoreDataProperties.swift in Sources */,
+				DC70A4AC29CD1DA300A88429 /* NewSleep+CoreDataClass.swift in Sources */,
+				DC70A45E29CD1B3800A88429 /* SMIOSApp.swift in Sources */,
+				DCA9596629DDBFB900944DF9 /* User+CoreDataClass.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC70A47129CD1B5F00A88429 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC70A4AD29CD1DA300A88429 /* NewSleep+CoreDataClass.swift in Sources */,
+				DC70A49E29CD1D2300A88429 /* HeartRateView.swift in Sources */,
+				DC70A4B329CD1DB700A88429 /* SleepConfigurations+CoreDataClass.swift in Sources */,
+				DC70A49B29CD1D1B00A88429 /* SleepProcessView.swift in Sources */,
+				DC70A47A29CD1B5F00A88429 /* ContentView.swift in Sources */,
+				DC70A4B529CD1DB700A88429 /* SleepConfigurations+CoreDataProperties.swift in Sources */,
+				DCA9596729DDBFB900944DF9 /* User+CoreDataClass.swift in Sources */,
+				DC70A4A329CD1D6B00A88429 /* Persistence.swift in Sources */,
+				DC70A47829CD1B5F00A88429 /* SMWatchAppApp.swift in Sources */,
+				DC70A4AF29CD1DA300A88429 /* NewSleep+CoreDataProperties.swift in Sources */,
+				DC70A4A929CD1D9000A88429 /* Alarm+CoreDataProperties.swift in Sources */,
+				DC70A4A729CD1D9000A88429 /* Alarm+CoreDataClass.swift in Sources */,
+				DC70A49A29CD1D1B00A88429 /* WorkoutManager.swift in Sources */,
+				DCA9596929DDBFB900944DF9 /* User+CoreDataProperties.swift in Sources */,
+				DC70A4BF29CD211600A88429 /* SMIOS.xcdatamodeld in Sources */,
+				DC70A4A129CD1D6600A88429 /* AlarmManager.swift in Sources */,
+				DC70A4BE29CD202000A88429 /* AlarmsViewMini.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DC97013E29F943E500061D3E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC70A47429CD1B5F00A88429 /* SMWatchApp Watch App */;
+			targetProxy = DC97013D29F943E500061D3E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		DC70A46C29CD1B3A00A88429 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		DC70A46D29CD1B3A00A88429 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Release;
+		};
+		DC70A46F29CD1B3A00A88429 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SMIOS/SMIOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SMIOS/Preview Content\"";
+				DEVELOPMENT_TEAM = X6K74HSLD8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SMWatchApp-Watch-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Smart  Alarm";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Used to read heart rate";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Used to read heart rate";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Used to read heart rate";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.11;
+				PRODUCT_BUNDLE_IDENTIFIER = sabes.SMIOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DC70A47029CD1B3A00A88429 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SMIOS/SMIOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SMIOS/Preview Content\"";
+				DEVELOPMENT_TEAM = X6K74HSLD8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SMWatchApp-Watch-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Smart  Alarm";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Used to read heart rate";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Used to read heart rate";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Used to read heart rate";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.11;
+				PRODUCT_BUNDLE_IDENTIFIER = sabes.SMIOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DC70A48129CD1B6100A88429 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "SMWatchApp Watch App/SMWatchApp Watch AppDebug.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SMWatchApp Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = X6K74HSLD8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SMWatchApp-Watch-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Smart Alarm";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Used to read heart rate";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Used to read heart rate";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = sabes.SMIOS;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sabes.SMIOS.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Debug;
+		};
+		DC70A48229CD1B6100A88429 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "SMWatchApp Watch App/SMWatchApp Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SMWatchApp Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = X6K74HSLD8;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SMWatchApp-Watch-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Smart Alarm";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Used to read heart rate";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Used to read heart rate";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = sabes.SMIOS;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = sabes.SMIOS.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DC70A45529CD1B3800A88429 /* Build configuration list for PBXProject "SMIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC70A46C29CD1B3A00A88429 /* Debug */,
+				DC70A46D29CD1B3A00A88429 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC70A46E29CD1B3A00A88429 /* Build configuration list for PBXNativeTarget "SMIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC70A46F29CD1B3A00A88429 /* Debug */,
+				DC70A47029CD1B3A00A88429 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC70A48029CD1B6100A88429 /* Build configuration list for PBXNativeTarget "SMWatchApp Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC70A48129CD1B6100A88429 /* Debug */,
+				DC70A48229CD1B6100A88429 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DC70A4B629CD1DF000A88429 /* XCRemoteSwiftPackageReference "LineChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Jonathan-Gander/LineChartView";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DC70A4B729CD1DF000A88429 /* LineChartView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC70A4B629CD1DF000A88429 /* XCRemoteSwiftPackageReference "LineChartView" */;
+			productName = LineChartView;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		DC70A46829CD1B3A00A88429 /* SMIOS.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DC70A46929CD1B3A00A88429 /* SMIOS.xcdatamodel */,
+			);
+			currentVersion = DC70A46929CD1B3A00A88429 /* SMIOS.xcdatamodel */;
+			path = SMIOS.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DC70A45229CD1B3800A88429 /* Project object */;
+}
