@@ -26,8 +26,9 @@ The `Xcode Project` directory contains the source code for the iOS and watchOS a
 
 Here is how the applications look:
 
-iOS Application: ![Alt text](assets/images/ios.png?raw=true "iOS Application")
-
+<p align="center">
+  <img src="assets/images/ios.png" alt="iOS Application" width="400">
+</p>
 watchOS Application: ![Alt text](assets/images/watch.png?raw=true "WatchOS Application")
 
 ## API
@@ -35,3 +36,7 @@ The `API` directory contains the code for the application programming interface 
 
 ## SleepPrediction
 The `SleepPrediction` directory contains the Python scripts used to preprocess the heart rate data and train the machine learning model for sleep stage prediction. The model is based on a deep learning architecture, specifically a Neural Network, and is trained on a dataset of heart rate data and corresponding sleep stages. The details of the model's setup and the training process can be found in our research paper. Once trained, this model is used by the API to analyze incoming heart rate data and predict the user's sleep stage.
+
+# Sleeping Proccess Explained
+
+
