@@ -71,7 +71,6 @@ def create_dataframe(subject_data, feature_extraction=False):
     heart_rate_df.dropna(subset=['stage'], inplace=True)
     heart_rate_df.index = pd.to_timedelta(heart_rate_df['seconds'], unit='s')
     time_windows = ['5T', '10T', '30T']  # 'T' stands for minutes
-    heart_rate_df['rr_interval'] = 60000 / heart_rate_df['heart_rate']
 
     for window in time_windows:
         heart_rate_df[f'heartRateDeviation_last_{window[:-1]}_min'] = heart_rate_df['heart_rate'].rolling(window=window, min_periods=1, center=False).apply(lambda x: np.std(x) / np.mean(x), raw=True)
@@ -79,8 +78,7 @@ def create_dataframe(subject_data, feature_extraction=False):
     
 
     for window in time_windows:
-        minute_value = int(window[:-1])
-        heart_rate_df[f'heartVariability_last_{minute_value}_min'] = heart_rate_df['rr_interval'].rolling(window=window, min_periods=1, center=False).apply(lambda x: np.std(x), raw=True)
+        heart_rate_df[f'heartVariability_last_{window[:-1]}_min'] = heart_rate_df['heart_rate'].rolling(window=window, min_periods=1, center=False).apply(lambda x: np.std(x), raw=True)
         heart_rate_df[f'RMSSD_last_{window[:-1]}_min'] = heart_rate_df['heart_rate'].rolling(window=window, min_periods=1, center=False).apply(rmssd, raw=True)
 
     for window in time_windows:
@@ -88,7 +86,6 @@ def create_dataframe(subject_data, feature_extraction=False):
         heart_rate_df[f'heart_rate_last_{window[:-1]}_min'] = heart_rate_df['heart_rate'] / mean_heart_rate
         
     heart_rate_df.dropna(subset=['heart_rate'], inplace=True)
-    heart_rate_data.dropna(subset=['rr_interval'], inplace=True)
     return heart_rate_df
 
 def create_dataframe__(subject_data, feature_extraction=False):

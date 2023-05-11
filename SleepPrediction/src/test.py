@@ -16,11 +16,10 @@ from keras.metrics import AUC
 from tensorflow.keras.models import load_model
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import cohen_kappa_score
-import copy
 from src.model import prepare_data_for_training, SleepStage, getData, custom_loss
-import pickle
 from sklearn.metrics import accuracy_score
 from joblib import dump, load
+from sklearn.metrics import accuracy_score, cohen_kappa_score
 
 class SleepStage:
     Wake = 0
@@ -242,10 +241,8 @@ def calculate_performance_metrics(y_true, y_pred, wake_threshold=0.6):
     # Convert probabilities to class labels
     y_pred_labels = (y_pred[:, 1] > wake_threshold).astype(int)
 
-    # Calculate accuracy
     accuracy = accuracy_score(y_true, y_pred_labels)
 
-    # Calculate Cohen's Kappa
     kappa = cohen_kappa_score(y_true, y_pred_labels)
 
     # Calculate confusion matrix
@@ -255,7 +252,7 @@ def calculate_performance_metrics(y_true, y_pred, wake_threshold=0.6):
     wake_correct = cm[0, 0] / (cm[0, 0] + cm[0, 1])
     sleep_correct = cm[1, 1] / (cm[1, 0] + cm[1, 1])
 
-    # Calculate AUC
+
     auc = roc_auc_score(y_true, y_pred[:, 1])
 
     return {
@@ -266,15 +263,15 @@ def calculate_performance_metrics(y_true, y_pred, wake_threshold=0.6):
         "AUC": auc
     }
 def test():
-    from sklearn.metrics import accuracy_score, cohen_kappa_score
-
-    models = ['sleep_weight_n60v14.h5', 'light_deep_n60v14.h5', 'REM_n60v14.h5']
+    
+    models = ['./models/sleep_weight_n60v13.h5', './models/light_deep_n60v13.h5', './models/REM_n60v13.h5']
     mappings = [
         {0: [SleepStage.Wake], 1: [SleepStage.N1, SleepStage.N2, SleepStage.N3, SleepStage.N4, SleepStage.REM]},
         {0: [SleepStage.Wake], 1: [SleepStage.N1, SleepStage.N2, SleepStage.REM], 2: [SleepStage.N3, SleepStage.N4]},
         {0: [SleepStage.Wake], 1: [SleepStage.REM], 2: [SleepStage.N1, SleepStage.N2, SleepStage.N3, SleepStage.N4]}
     ]
-
+    predictions_mapping = {j:i for i ,j in zip(models, ['SW', 'LD', 'REM'])}
+    predicitons = {}
     cm_train = []
     cm_test = []
     accuracies_train = []
@@ -284,7 +281,7 @@ def test():
 
     for i, model_path in enumerate(models):
         model = load_model(model_path, custom_objects={'custom_loss': custom_loss})
-        X_train, Y_train, X_test, Y_test = prepare_data_for_training(fetch=False, visualize=False, mapping=mappings[i])
+        X_train, Y_train, X_test, Y_test = prepare_data_for_training(fetch=(i==1), visualize=False, mapping=mappings[i])
 
         if i > 0:
             # Remove instances where the y label is 0
@@ -306,11 +303,16 @@ def test():
         y_pred_test_int = np.argmax(y_pred_test, axis=1)
         y_test_int = [label for label in Y_test]
 
-        # Calculate accuracy and kappa score for training set
+        #save predicitons
+        predicitons[models[i]+'test'] = y_test_int
+        predicitons[models[i]+'train'] = y_train_int
+        predicitons[models[i]+'test_pred'] = y_pred_test_int
+        predicitons[models[i]+'train_pred'] = y_pred_train_int
+
+
         accuracy_train = accuracy_score(y_train_int, y_pred_train_int)
         kappa_train = cohen_kappa_score(y_train_int, y_pred_train_int)
 
-        # Calculate accuracy and kappa score for test set
         accuracy_test = accuracy_score(y_test_int, y_pred_test_int)
         kappa_test = cohen_kappa_score(y_test_int, y_pred_test_int)
 
@@ -323,98 +325,37 @@ def test():
         kappa_scores_train.append(kappa_train)
         kappa_scores_test.append(kappa_test)
 
-    # Print the results
-    print("Confusion Matrices for Training Set:")
+
+    
+    pred = combine_pred(predicitons[predictions_mapping['SW']+ 'test_pred'], predicitons[predictions_mapping['LD']+ 'test_pred'], predicitons[predictions_mapping['REM']+ 'test_pred'])
+
+    print(f"Confusion Matrices for Training Set with model '{model[i]}':")
     for matrix in cm_train:
         print(matrix)
 
-    print("Confusion Matrices for Test Set:")
+    print(f"Confusion Matrices for Test Set  with model '{model[i]}':")
     for matrix in cm_test:
         print(matrix)
 
-    print("Accuracies for Training Set:")
+    print(f"Accuracies for Training Set with model '{model[i]}':")
     for accuracy in accuracies_train:
         print(accuracy)
 
-    print("Accuracies for Test Set:")
+    print(f"Accuracies for Test Set with model '{model[i]}':")
     for accuracy in accuracies_test:
         print(accuracy)
 
-    print("Kappa Scores for Training Set:")
+    print(f"Kappa Scores for Training Set with model '{model[i]}':")
     for kappa in kappa_scores_train:
         print(kappa)
 
-    print("Kappa Scores for Test Set:")
+    print(f"Kappa Scores for Test Se with model '{model[i]}':")
     for kappa in kappa_scores_test:
         print(kappa)
 
+
+
 if __name__ == '__main__':
     test()
-    model_wake_sleep = load_model('./models/sleep_weight_n60v13.h5')
-    model_light_deep = load_model('./models/light_deep_n60v13.h5', custom_objects={'custom_loss': custom_loss})
-    model_stage = load_model('./models/REM_n60v13.h5')
-
-    wake_deep={0:[SleepStage.Wake],1:[SleepStage.N1,SleepStage.N2,SleepStage.N3,SleepStage.N4,SleepStage.REM]}
-    light_deep={0:[SleepStage.Wake],1:[SleepStage.N1,SleepStage.N2,SleepStage.REM], 2:[SleepStage.N3,SleepStage.N4]}
-    sleep_rem={0:[SleepStage.Wake], 1:[SleepStage.REM], 2:[SleepStage.N1,SleepStage.N2,SleepStage.N3,SleepStage.N4]}
-    s_all_map = {0:[SleepStage.Wake],1:[SleepStage.N1, SleepStage.N2], 2:[SleepStage.REM],3:[SleepStage.N3,SleepStage.N4]}
-    _,_,_,s_all = prepare_data_for_training(fetch=False, visualize=False, mapping=s_all_map)
     
-    X_train, Y_train, X_test, Y_test = prepare_data_for_training(fetch=False, visualize=False, mapping=wake_deep)
-
-    y_pred_wake_sleep = model_wake_sleep.predict(X_test)
-    y_sleep_wake_pred_int = [SleepStage.Wake if pred[0] > 0.5 else 1 for pred in y_pred_wake_sleep]
-    y_pred_train_wake_sleep = model_wake_sleep.predict(X_train)
-    y_train_pred_int = [SleepStage.Wake if pred[0] > pred[1] else 1 for pred in y_pred_train_wake_sleep]
-
-    y_test_int = [SleepStage.Wake if label == 0 else 1 for label in Y_test]
-    metrics = calculate_performance_metrics(Y_test, y_pred_wake_sleep)
-    #print(metrics)
-    metrics = calculate_performance_metrics(Y_train, y_pred_train_wake_sleep)
-    #print(metrics)
-
-    train_accuracy = accuracy_score(Y_train, y_train_pred_int)
-    #print("Training accuracy:", train_accuracy)
-    test_accuracy = accuracy_score(Y_test, y_sleep_wake_pred_int)
-    #print("Test accuracy:", test_accuracy)
-
-    plot(y_sleep_wake_pred_int, s_all)
-    y_sleep_wake_pred_int = change_values_to_majority(y_sleep_wake_pred_int, 200)
-    plot(y_sleep_wake_pred_int, s_all)
-    print(confusion_matrix(y_test_int, y_sleep_wake_pred_int))
-    kappa = cohen_kappa_score(y_test_int, y_sleep_wake_pred_int)
-
-    print("Cohen's kappa score:", kappa)
-
-    X_train, Y_train, X_test, Y_test = prepare_data_for_training(fetch=False, visualize=False, mapping=light_deep)
-    X_test = np.array(X_test)
-    y_test_int = [label for label in Y_test]
-    y_pred_l_sleep = model_light_deep.predict(X_test)
-    y_pred_l_int = [SleepStage.Wake if pred[0] > pred[1] else 1.0 for pred in y_pred_l_sleep]
-
-   
-    s_r = combine_pred_s_l(y_sleep_wake_pred_int, y_pred_l_int)
-
-    kappa = cohen_kappa_score(y_test_int, y_pred_l_int)
-    accuracy_score = accuracy_score(y_test_int, y_pred_l_int)
-    print("Accuracy score:", accuracy_score)
-    print("Cohen's kappa score:", kappa)
-
-    plot(s_r, s_all)
-
-    y_pred_l_int = change_values_to_majority(y_pred_l_int, 20)
-    s_r = combine_pred_s_l(y_sleep_wake_pred_int, y_pred_l_int)
-    plot(s_r, s_all)
-    
-    X_train, Y_train, X_test, Y_test = prepare_data_for_training(fetch=False, visualize=False, mapping = sleep_rem)
-    X_test = np.array(X_test)
-    y_pred_s_sleep = model_stage.predict(X_test)
-    y_pred_s_int = [0 if pred[0] > 0.6 else 1.0 for pred in y_pred_s_sleep]
-    y_test_int = [label for label in Y_test]
-    pred = combine_pred(y_sleep_wake_pred_int, y_pred_l_int, y_pred_s_int)
-    plot(pred, s_all)
-    
-    y_pred_s_int = change_values_to_majority(y_pred_s_int, 50)
-    pred = combine_pred(y_sleep_wake_pred_int, y_pred_l_int, y_pred_s_int)
-    plot(pred, s_all)
 
