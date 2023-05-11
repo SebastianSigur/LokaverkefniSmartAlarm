@@ -281,7 +281,7 @@ def test():
 
     for i, model_path in enumerate(models):
         model = load_model(model_path, custom_objects={'custom_loss': custom_loss})
-        X_train, Y_train, X_test, Y_test = prepare_data_for_training(fetch=(i==1), visualize=False, mapping=mappings[i])
+        X_train, Y_train, X_test, Y_test = prepare_data_for_training(fetch=False, visualize=False, mapping=mappings[i])
 
         if i > 0:
             # Remove instances where the y label is 0
@@ -329,27 +329,27 @@ def test():
     
     pred = combine_pred(predicitons[predictions_mapping['SW']+ 'test_pred'], predicitons[predictions_mapping['LD']+ 'test_pred'], predicitons[predictions_mapping['REM']+ 'test_pred'])
 
-    print(f"Confusion Matrices for Training Set with model '{model[i]}':")
+    print(f"Confusion Matrices for Training Set:")
     for matrix in cm_train:
         print(matrix)
 
-    print(f"Confusion Matrices for Test Set  with model '{model[i]}':")
+    print(f"Confusion Matrices for Test Set")
     for matrix in cm_test:
         print(matrix)
 
-    print(f"Accuracies for Training Set with model '{model[i]}':")
+    print(f"Accuracies for Training Set:")
     for accuracy in accuracies_train:
         print(accuracy)
 
-    print(f"Accuracies for Test Set with model '{model[i]}':")
+    print(f"Accuracies for Test Set:")
     for accuracy in accuracies_test:
         print(accuracy)
 
-    print(f"Kappa Scores for Training Set with model '{model[i]}':")
+    print(f"Kappa Scores for Training Set:")
     for kappa in kappa_scores_train:
         print(kappa)
 
-    print(f"Kappa Scores for Test Se with model '{model[i]}':")
+    print(f"Kappa Scores for Test Set")
     for kappa in kappa_scores_test:
         print(kappa)
 
