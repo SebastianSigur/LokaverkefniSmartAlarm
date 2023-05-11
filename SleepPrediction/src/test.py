@@ -327,31 +327,38 @@ def test():
 
 
     
-    pred = combine_pred(predicitons[predictions_mapping['SW']+ 'test_pred'], predicitons[predictions_mapping['LD']+ 'test_pred'], predicitons[predictions_mapping['REM']+ 'test_pred'])
-
-    print(f"Confusion Matrices for Training Set:")
-    for matrix in cm_train:
-        print(matrix)
-
-    print(f"Confusion Matrices for Test Set")
-    for matrix in cm_test:
-        print(matrix)
-
+    
+    info = ['Sleep vs. Wake', 'Light vs. Deep', 'REM vs. nonREM']
+    x = 0
     print(f"Accuracies for Training Set:")
     for accuracy in accuracies_train:
-        print(accuracy)
-
-    print(f"Accuracies for Test Set:")
+        print(info[x] + f' {accuracy}')
+        x+=1
+    x = 0
+    print(f"\nAccuracies for Test Set:")
     for accuracy in accuracies_test:
-        print(accuracy)
-
-    print(f"Kappa Scores for Training Set:")
+        print(info[x] + f' {accuracy}')
+    x = 0
+    print(f"\nKappa Scores for Training Set:")
     for kappa in kappa_scores_train:
-        print(kappa)
-
-    print(f"Kappa Scores for Test Set")
+        print(info[x] + f' {kappa}')
+    x = 0
+    print(f"\nKappa Scores for Test Set")
     for kappa in kappa_scores_test:
-        print(kappa)
+        print(info[x] + f' {kappa}')
+
+    pred = combine_pred(predicitons[predictions_mapping['SW']+ 'test_pred'], predicitons[predictions_mapping['LD']+ 'test_pred'], predicitons[predictions_mapping['REM']+ 'test_pred'])
+    true = combine_pred(predicitons[predictions_mapping['SW']+ 'test'], predicitons[predictions_mapping['LD']+ 'test'], predicitons[predictions_mapping['REM']+ 'test'])
+    pred_train = combine_pred(predicitons[predictions_mapping['SW']+ 'train_pred'], predicitons[predictions_mapping['LD']+ 'train_pred'], predicitons[predictions_mapping['REM']+ 'train_pred'])
+    true_train = combine_pred(predicitons[predictions_mapping['SW']+ 'train'], predicitons[predictions_mapping['LD']+ 'train'], predicitons[predictions_mapping['REM']+ 'train'])
+    
+
+    print(f"\nAccuracies for predicting all classes Training Set:{accuracy_score(true_train, pred_train)}")
+    print(f"Accuracies for predicting all classes Test Set:{accuracy_score(true, pred)}")
+    print(f"Kappa Scores for predicting all classes  Training Set: {cohen_kappa_score(true_train, pred_train)}")
+    print(f"Kappa Scores for predicting all classes  Test Set: {cohen_kappa_score(true, pred)}")
+    
+
 
 
 
