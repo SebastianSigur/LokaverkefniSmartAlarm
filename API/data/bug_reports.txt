@@ -1,0 +1,47 @@
+^^^^^^^^^^
+Get ekki breytt Age oh Weight
+vvvvvvvvvv
+
+
+^^^^^^^^^^
+Þarft að sign-a inn a icloud í símanum
+vvvvvvvvvv
+
+
+
+^^^^^^^^^^
+Test
+vvvvvvvvvv
+
+
+
+^^^^^^^^^^
+Alarm Goes of if the alarm is set for the next day
+vvvvvvvvvv
+
+
+
+^^^^^^^^^^
+Sleep process not seen on iOS
+
+vvvvvvvvvv
+
+
+
+^^^^^^^^^^
+Testing bug
+vvvvvvvvvv
+
+
+
+^^^^^^^^^^
+Timer doesnt count down
+
+vvvvvvvvvv
+
+
+
+^^^^^^^^^^
+alarm 7:30 and 22:18. 730 sent instead of 2218
+vvvvvvvvvv
+
