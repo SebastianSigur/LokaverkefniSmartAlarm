@@ -37,8 +37,6 @@ watchOS Application:
 ## API
 The `API` directory contains the code for the application programming interface (API) that handles the communication between the Apple Watch and the server. The Apple Watch records the user's heart rate and sends it to the API. The API then communicates with the sleep prediction model to analyze the data and determine the optimal time within the user's wake-up window to trigger the alarm.
 
-Before being able to run any of this, install the requirements from requirements.txt
-
 To run the api, enter the directory API and run
 ```py
 python -m app.py
