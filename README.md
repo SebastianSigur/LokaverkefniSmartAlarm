@@ -7,7 +7,7 @@ This repository contains the code, documentation, and other relevant resources f
 - [Introduction](#Introduction)
 - [Code Architecture](#code-rchitecture)
 - [Example Of Sleeping Proccess](#example-proccess)
-
+- [Usage](#usage)
 ## Introduction
 
 This project is the result of our research study aimed at improving the quality of sleep for individuals by preventing users from waking up during a deeper stage of sleep. This is acheived by leveraging the power of machine learning.
@@ -62,7 +62,7 @@ Within the API endpoint, the received heart rate data is temporarily stored, and
 pred = transformdata([f"{s},{int(h)}" for s,h in zip(time_list, heart_rates)])
 ```
 
-It's important to note that the data is preprocessed before feeding it into the model. The `transformdata()` function is responsible for both data augmentation and data transformation. For detailed information on the preprocessing techniques utilized, please refer to the research paper.
+The data is preprocessed before feeding it into the model. The `transformdata()` function is responsible for both data augmentation and data transformation. For detailed information on the preprocessing techniques utilized, please refer to the research paper.
 
 The `pred` variable obtained from the prediction is then used to find an optimal wake-up time based on the user's preferences and defined rules. The following line of code is used for this purpose:
 
@@ -70,18 +70,43 @@ The `pred` variable obtained from the prediction is then used to find an optimal
 newAlarm = find_optimal_wakeup(pred, time_list, alarm, giveFront*60, giveBack*60)
 ```
 
-By utilizing the predicted sleep stages, the original alarm time, and the user-defined rules, the `find_optimal_wakeup()` function determines a new alarm time that aims to minimize sleep inertia or grogginess upon awakening.
+Using the predicted sleep stages, the original alarm time, and the user-defined rules, the `find_optimal_wakeup()` function determines a new alarm time that aims to minimize sleep inertia or grogginess upon awakening.
 
-This process demonstrates how the user's heart rate data is collected, processed, and used to predict sleep stages, ultimately leading to the calculation of an optimized wake-up time based on the user's preferences.
+# Usage
 
-Before being able to run any of this, install the requirements from requirements.txt
+Before proceeding, make sure to install the required dependencies listed in the `requirements.txt` file.
 
-To train the model on the 85% of the data set, enter the directory SleepPrediction/src and run
-```py
+## Training Your Own Model
+
+If you wish to train your own model, you can customize the hyperparameters in the `trainModel()` function located at `SleepPrediction/src/model`. This allows you to fine-tune the model according to your specific requirements. The following hyperparameters can be modified:
+
+```python
+epochs_list = [50]
+batch_size_list = [32]
+nr_of_layers_list = [4]
+dropout_list = [0.5]
+regularize_list = [None]
+dense_units_list = [32, 64, 128]
+mids = [8, 16, 32]
+```
+
+To train the model, navigate to the `SleepPrediction` directory and execute the following command:
+
+```bash
 python -m src.visualize_and_train
 ```
 
-To validate the training model (85%) against the 15% set aside, enter the directory SleepPrediction/src and run
-```py
+This command will initiate the process of fetching and preprocessing the data, followed by performing grid search based on the specified hyperparameters. Additionally, if you wish to modify the model structure, you can find it within the same file under the `defineModel()` function.
+
+## Validating the Model
+
+To validate the model, navigate to the `SleepPrediction` directory and run the following command:
+
+```bash
 python -m src.test
 ```
+
+Executing this command will assess the performance of the trained model using the validation dataset.
+
+These instructions provide guidance on training your own model with customized hyperparameters and validating the model's performance using the provided test dataset.
+
