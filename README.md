@@ -96,7 +96,8 @@ To train the model, navigate to the `SleepPrediction` directory and execute the 
 python -m src.visualize_and_train
 ```
 
-This command will initiate the process of fetching and preprocessing the data, followed by performing grid search based on the specified hyperparameters. Additionally, if you wish to modify the model structure, you can find it within the same file under the `defineModel()` function.
+This command will initiate the process of fetching and preprocessing the data, followed by performing grid search based on the specified hyperparameters.
+If you wish to modify the model structure, you can find it within the same file under the `defineModel()` function.
 
 ## Validating the Model
 
