@@ -58,6 +58,3 @@ newAlarm = find_optimal_wakeup(pred, time_list, alarm, giveFront*60, giveBack*60
 ```
 
 By utilizing the predicted sleep stages, the original alarm time, and the user-defined rules, the `find_optimal_wakeup()` function determines a new alarm time that aims to minimize sleep inertia or grogginess upon awakening.
-
-This process demonstrates how the user's heart rate data is collected, processed, and used to predict sleep stages, ultimately leading to the calculation of an optimized wake-up time based on the user's preferences.
-
