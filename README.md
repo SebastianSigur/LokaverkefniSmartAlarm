@@ -78,7 +78,7 @@ Before proceeding, make sure to install the required dependencies listed in the 
 
 ## Training Your Own Model
 
-If you wish to train your own model, you can customize the hyperparameters in the `trainModel()` function located at `SleepPrediction/src/model`. This allows you to fine-tune the model according to your specific requirements. The following hyperparameters can be modified:
+If you wish to train your own model, you can customize the hyperparameters in the `trainModel()` function located at `SleepPrediction/src/model`. This allows you to fine-tune the model according to your specific requirements. The following hyperparameters can be modified by adding your desired hyperparamters into the following lists:
 
 ```python
 epochs_list = [50]
