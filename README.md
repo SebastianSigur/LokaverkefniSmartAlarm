@@ -37,6 +37,19 @@ watchOS Application:
 ## API
 The `API` directory contains the code for the application programming interface (API) that handles the communication between the Apple Watch and the server. The Apple Watch records the user's heart rate and sends it to the API. The API then communicates with the sleep prediction model to analyze the data and determine the optimal time within the user's wake-up window to trigger the alarm.
 
+Before being able to run any of this, install the requirements from requirements.txt
+
+To run the api, enter the directory API and run
+```py
+python -m app.py
+```
+
+Bug reports, sent by the applications will be appended in the file API/data/bug_reports.txt.
+
+Current active user's heart rate time from start, will be appended continuously in the file API/data/hr_data.txt, for the algorithm uses this data over the sleep
+which could then be retrieved for further inspection, and statistical analysis.
+
+
 ## SleepPrediction
 The `SleepPrediction` directory contains the Python scripts used to preprocess the heart rate data and train the machine learning model for sleep stage prediction. The model is based on a deep learning architecture, specifically a Neural Network, and is trained on a dataset of heart rate data and corresponding sleep stages. The details of the model's setup and the training process can be found in our research paper. Once trained, this model is used by the API to analyze incoming heart rate data and predict the user's sleep stage.
 
@@ -58,3 +71,17 @@ newAlarm = find_optimal_wakeup(pred, time_list, alarm, giveFront*60, giveBack*60
 ```
 
 By utilizing the predicted sleep stages, the original alarm time, and the user-defined rules, the `find_optimal_wakeup()` function determines a new alarm time that aims to minimize sleep inertia or grogginess upon awakening.
+
+This process demonstrates how the user's heart rate data is collected, processed, and used to predict sleep stages, ultimately leading to the calculation of an optimized wake-up time based on the user's preferences.
+
+Before being able to run any of this, install the requirements from requirements.txt
+
+To train the model on the 85% of the data set, enter the directory SleepPrediction/src and run
+```py
+python -m src.visualize_and_train
+```
+
+To validate the training model (85%) against the 15% set aside, enter the directory SleepPrediction/src and run
+```py
+python -m src.test
+```
