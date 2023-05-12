@@ -109,5 +109,3 @@ python -m src.test
 
 Executing this command will assess the performance of the trained model using the validation dataset.
 
-These instructions provide guidance on training your own model with customized hyperparameters and validating the model's performance using the provided test dataset.
-
