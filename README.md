@@ -19,7 +19,7 @@ The heart of our application lies in its machine learning model, which we traine
 
 # Code Architecture
 
-Our application structure is divided into three main directories: `API`, `SleepPrediction`, and `Xcode Project`. Each directory has a distinct role in the overall functionality of the Smart Alarm Sleep App. Below, we provide an overview of what each directory contains and how it contributes to the app.
+Our application structure is divided into three main directories: `API`, `SleepPrediction`, and `Xcode Project`. Each directory has a distinct role of the Smart Alarm Sleep App. Below, we provide an overview of what each directory contains and how it is connectted to app.
 
 ## Xcode Project
 The `Xcode Project` directory contains the source code for the iOS and watchOS applications. These are developed using Xcode, Apple's integrated development environment (IDE). The applications serve as the user interface for the Smart Alarm Sleep App, allowing users to input their desired wake-up window and view their sleep data. 
