@@ -40,8 +40,7 @@ The `API` directory contains the code for the application programming interface 
 ## SleepPrediction
 The `SleepPrediction` directory contains the Python scripts used to preprocess the heart rate data and train the machine learning model for sleep stage prediction. The model is based on a deep learning architecture, specifically a Neural Network, and is trained on a dataset of heart rate data and corresponding sleep stages. The details of the model's setup and the training process can be found in our research paper. Once trained, this model is used by the API to analyze incoming heart rate data and predict the user's sleep stage.
 
-# Sleep Process and Data Prediction
-
+# Sleeping Proccess Explained
 When the user initiates the sleep process by pressing the "Start Sleeping" button on their Apple Watch, it triggers a workout process on the watch and simultaneously sends the user's most recent heart rate data to the API endpoint `@app.route('/predict', methods=['POST'])`.
 
 Within the API endpoint, the received heart rate data is temporarily stored, and the sleep stages the user is going through are predicted using the following line of code:
