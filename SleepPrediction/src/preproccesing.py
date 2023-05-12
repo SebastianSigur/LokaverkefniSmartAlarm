@@ -72,6 +72,8 @@ def create_dataframe(subject_data, feature_extraction=False):
     heart_rate_df.index = pd.to_timedelta(heart_rate_df['seconds'], unit='s')
     time_windows = ['5T', '10T', '30T']  # 'T' stands for minutes
 
+
+    #Merging theses '3' loop into one loop would be the same 
     for window in time_windows:
         heart_rate_df[f'heartRateDeviation_last_{window[:-1]}_min'] = heart_rate_df['heart_rate'].rolling(window=window, min_periods=1, center=False).apply(lambda x: np.std(x) / np.mean(x), raw=True)
         #heart_rate_df[f'heartRateMean_last_{window//60}_min'] = heart_rate_df['heart_rate'].rolling(window=window, min_periods=1, center=False).mean()
@@ -85,48 +87,8 @@ def create_dataframe(subject_data, feature_extraction=False):
         mean_heart_rate = heart_rate_df['heart_rate'].rolling(window=window, min_periods=1).mean()
         heart_rate_df[f'heart_rate_last_{window[:-1]}_min'] = heart_rate_df['heart_rate'] / mean_heart_rate
         
-    heart_rate_df.dropna(subset=['heart_rate'], inplace=True)
+    heart_rate_df.dropna(subset=['heart_rate'], inplace=True) # dropping heart rate to prevent overfitting due to limited dataset
     return heart_rate_df
-
-def create_dataframe__(subject_data, feature_extraction=False):
-
-    heart_rate_data = [x for x in subject_data if 'heart_rate' in x]
-    sleep_stage_data = [x for x in subject_data if 'stage' in x]
-    heart_rate_df = pd.DataFrame(heart_rate_data).sort_values(by='seconds')
-    sleep_stage_df = pd.DataFrame(sleep_stage_data).sort_values(by='seconds')
-
-
-    heart_rate_df['stage'] = None
-    last_sleep_stage_time = sleep_stage_df['seconds'].max()
-    for index, row in heart_rate_df.iterrows():
-        if row['seconds'] < 0:
-            heart_rate_df.at[index, 'stage'] = 0
-        elif row['seconds'] > last_sleep_stage_time:
-            heart_rate_df.at[index, 'stage'] = None
-        else:
-            closest_index = sleep_stage_df['seconds'].sub(row['seconds']).abs().idxmin()
-            heart_rate_df.at[index, 'stage'] = sleep_stage_df.at[closest_index, 'stage']
-
-    heart_rate_df.dropna(subset=['stage'], inplace=True)
-
-    time_windows = [60, 60*5, 60*10, 60*30, 60*60]  # 1, 5, 10, and 30 minutes in seconds
-    for window in time_windows:
-        print(heart_rate_df)
-        heart_rate_df[f'heartRateDeviation_last_{window//60}_min'] = heart_rate_df['heart_rate'].rolling(window=window, min_periods=1, center=False).apply(lambda x: np.std(x) / np.mean(x), raw=True)
-        #heart_rate_df[f'heartRateMean_last_{window//60}_min'] = heart_rate_df['heart_rate'].rolling(window=window, min_periods=1, center=False).mean()
-    
-
-    for window in time_windows:
-        heart_rate_df[f'heartVariability_last_{window//60}_min'] = heart_rate_df['heart_rate'].rolling(window=window, min_periods=1, center=False).apply(lambda x: np.std(x), raw=True)
-        heart_rate_df[f'RMSSD_last_{window//60}_min'] = heart_rate_df['heart_rate'].rolling(window=window, min_periods=1, center=False).apply(rmssd, raw=True)
-
-    for window in time_windows:
-        mean_heart_rate = heart_rate_df['heart_rate'].rolling(window=window, min_periods=1).mean()
-        heart_rate_df[f'heart_rate_last_{window//60}_min'] = heart_rate_df['heart_rate'] / mean_heart_rate
-    
-    heart_rate_df.dropna(subset=['heart_rate'], inplace=True)
-    return heart_rate_df
-
 
 def rmssd(rr_intervals):
     if len(rr_intervals) <= 1:

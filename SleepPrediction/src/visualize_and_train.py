@@ -12,10 +12,10 @@ if __name__ == '__main__':
         
     cm = []
 
-    X_train, Y_train, X_test, Y_test = prepare_data_for_training(fetch=False, visualize=False, mapping = {0:[SleepStage.Wake], 1:[SleepStage.N1,SleepStage.N2,SleepStage.N3,SleepStage.N4,SleepStage.REM]})
+    X_train, Y_train, X_test, Y_test = prepare_data_for_training(fetch=True, visualize=False, mapping = {0:[SleepStage.Wake], 1:[SleepStage.N1,SleepStage.N2,SleepStage.N3,SleepStage.N4,SleepStage.REM]})
 
     history, model = trainModel(X_train, Y_train, X_test, Y_test)
-    model.save('/models/sleep_weight_n60v13.h5')
+    model.save('/models/sleep_weight_n60v15.h5')
 
     y_test_int = [SleepStage.Wake if label == 0 else 1 for label in Y_test]
 
@@ -38,7 +38,7 @@ if __name__ == '__main__':
 
     history, model = trainModel(X_train, Y_train, X_test, Y_test, weighted = True)
 
-    model.save('/models/light_deep_n60v13.h5')
+    model.save('/models/light_deep_n60v15.h5')
 
     y_test_int = [SleepStage.Wake if label == 0 else 1 for label in Y_test]
 
@@ -60,7 +60,7 @@ if __name__ == '__main__':
     Y_test = np.array([Y_test[i]-1 for i in valid_indices])
 
     history, model = trainModel(X_train, Y_train, X_test, Y_test)
-    model.save('/models/REM_n60v13.h5')
+    model.save('/models/REM_n60v15.h5')
 
     y_test_int = [SleepStage.Wake if label == 0 else 1 for label in Y_test]
 
