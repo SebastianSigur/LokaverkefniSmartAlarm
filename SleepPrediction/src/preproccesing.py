@@ -4,8 +4,6 @@ import numpy as np
 
 import matplotlib.pyplot as plt
 import itertools
-import heartpy as hp
-from scipy.signal import welch
 
 
 def plot_all_combinations(subject_id, dataframe):

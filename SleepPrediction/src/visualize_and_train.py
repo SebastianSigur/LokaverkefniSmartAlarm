@@ -1,11 +1,8 @@
 
-import pandas as pd
-import matplotlib.pyplot as plt
-from src.model import prepare_data_for_training, defineModel, trainModel, SleepStage
+from src.model import prepare_data_for_training, trainModel, SleepStage
 import numpy as np
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import cohen_kappa_score
-from joblib import dump, load
 
 
 if __name__ == '__main__':

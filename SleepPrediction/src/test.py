@@ -1,24 +1,12 @@
 import os
 import pandas as pd
 import numpy as np
-from sklearn.preprocessing import MinMaxScaler
-import tensorflow as tf
-from tensorflow.keras.layers import Dense, LSTM
-from tensorflow.keras.models import Sequential
 import matplotlib.pyplot as plt
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-from tensorflow.keras.layers import Input, LSTM, Dense, Dropout, concatenate
-from tensorflow.keras.models import Model
-from tensorflow.keras import regularizers
-from sklearn.utils import shuffle
-from keras.metrics import AUC
 from tensorflow.keras.models import load_model
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import cohen_kappa_score
-from src.model import prepare_data_for_training, SleepStage, getData, custom_loss
+from src.model import prepare_data_for_training, SleepStage, custom_loss
 from sklearn.metrics import accuracy_score
-from joblib import dump, load
 from sklearn.metrics import accuracy_score, cohen_kappa_score
 
 class SleepStage:
